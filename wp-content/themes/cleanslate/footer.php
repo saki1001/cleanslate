@@ -15,7 +15,7 @@
 
 <footer id="footer" role="contentinfo">
     <div>
-        Mara G. Haseltine &copy;2013
+        Author &copy;2013
     </div>
 </footer><!-- #footer -->
 
