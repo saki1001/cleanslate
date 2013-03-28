@@ -69,7 +69,7 @@
         <header id="branding" role="banner">
             <div id="logo">
                 <h1 id="site-title">
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"></a>
+                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">CleanSlate</a>
                 </h1>
             </div>
             
