@@ -61,7 +61,6 @@ http://ryanfait.com/
     width: 950px;
     text-align: right;
     font-size: 1.6em;
-    background: url('../images/ctenophore-footer.jpg') no-repeat right top;
     margin: 0 auto;
 }
 
@@ -122,30 +121,24 @@ h1, h2, h3, h4, h5 {
 -------------------------------------------------------------- */
 header {
     position: relative;
-    padding: 124px 0 30px;
+    padding: 30px 0;
 }
 
 header #logo {
     position: absolute;
-    top: 30px;
-    left: -55px;
-    width: 332px;
-    height: 162px;
-    background: url('../images/ctenophore-logo.jpg') no-repeat 0 0;
 }
 
 header h1 {
     font-size: 2.8em;
     font-weight: bold;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 10px;
 }
 
 header h1 a {
-    opacity: 0;
+/*    opacity: 0;*/
     display: block;
     width: 100%;
-    height: 62px;
 }
 
 /* Menu
@@ -735,7 +728,7 @@ body.portfolio-gallery #content .text-container p {
 /* Blog List Format
 News, Blog and Tag pages in these categories
 -------------------------------------------------------------- */
-#content.blog-list article {
+#content.post-list article {
     width: 100%;
     border: solid 1px #AAAAAA;
     border-left: none;
@@ -746,7 +739,7 @@ News, Blog and Tag pages in these categories
     float: left;
 }
 
-#content.blog-list article .entry-meta {
+#content.post-list article .entry-meta {
     font-size: 2.2em;
     color: #CCCCCC;
     line-height: 1.2;
@@ -755,55 +748,55 @@ News, Blog and Tag pages in these categories
     float: left;
 }
 
-#content.blog-list article .entry {
+#content.post-list article .entry {
     margin: 15px 0;
     float: left;
 }
 
-#content.blog-list article.thumb .entry {
+#content.post-list article.thumb .entry {
     width: 450px;
     height: 95px;
     overflow: hidden;
 }
 
-#content.blog-list article.text .entry {
+#content.post-list article.text .entry {
     width: 700px;
     height: 50px;
     overflow: hidden;
 }
 
-#content.blog-list article .entry .entry-title a {
+#content.post-list article .entry .entry-title a {
     font-size: 2.2em;
     line-height: 1.2;
 }
 
-#content.blog-list article.thumb .entry .entry-title {
+#content.post-list article.thumb .entry .entry-title {
     width: 450px;
     max-height: 55px;
     margin-bottom: 5px;
     overflow: hidden;
 }
 
-#content.blog-list article.text .entry .entry-title {
+#content.post-list article.text .entry .entry-title {
     display: inline;
 }
 
-#content.blog-list article .entry .entry-content {
+#content.post-list article .entry .entry-content {
     font-size: 1.6em;
     line-height: 1.2;
 }
 
-#content.blog-list article.thumb .entry .entry-content {
+#content.post-list article.thumb .entry .entry-content {
     line-height: 1.2;
     width: 450px;
 }
 
-#content.blog-list article.text .entry .entry-content {
+#content.post-list article.text .entry .entry-content {
     line-height: 1.6;
     display: inline;
 }
 
-#content.blog-list article.thumb figure {
+#content.post-list article.thumb figure {
     width: 225px;
     height: 130px;
     font-size: 1.6em;
@@ -818,23 +811,23 @@ News, Blog and Tag pages in these categories
 /* Blog Single Format
 News, Blog and Tag pages in these categories
 -------------------------------------------------------------- */
-#content.blog-single article {
+#content.post-single article {
     margin-bottom: 30px;
     overflow: hidden;
 }
 
-#content.blog-single .post-footer {
+#content.post-single .post-footer {
     width: 100%;
     font-size: 1.6em;
     line-height: 1.2;
     overflow: hidden; /*clearfix*/
 }
 
-#content.blog-single .post-footer .post-nav {
+#content.post-single .post-footer .post-nav {
     float: left;
 }
 
-#content.blog-single .post-footer .post-tags {
+#content.post-single .post-footer .post-tags {
     max-width: 500px;
     float: right;
 }
