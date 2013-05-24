@@ -8,6 +8,7 @@
 ?>
         <div id="sidebar">
             <h2>Normal Sidebar</h2>
+            <ul>
             <?php
                 foreach( ( get_the_category() ) as $category ) {
                 $the_query = new WP_Query('category_name=' . $category->category_nicename);
