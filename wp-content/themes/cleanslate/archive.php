@@ -15,32 +15,22 @@ get_header(); ?>
     
     <?php if ( have_posts() ) : ?>
         
-        <section id="content" class="post-list" role="main">
-            <h2 class="page-title">
-                <?php
-                    if ( is_day() ) :
-                        printf( __( 'Daily Archives: %s', 'toolbox' ), '<span>' . get_the_date() . '</span>' );
-                    elseif ( is_month() ) :
-                        printf( __( 'Monthly Archives: %s', 'toolbox' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
-                    elseif ( is_year() ) :
-                        printf( __( 'Yearly Archives: %s', 'toolbox' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-                    else :
-                        _e( 'Archives', 'toolbox' );
-                    endif;
-                ?>
-            </h2>
+        <section id="content">
             
-            <?php rewind_posts(); ?>
+            <?php get_sidebar(); ?>
             
             <?php
                 
                 $count = 0;
-                
+            ?>
+            
+            <div id="articles">
+            
+            <?php
                 while ( have_posts() ) : the_post();
                     
-                    if ( in_category('blog') || in_category('news') ) :
-                        // List Excerpts Template
-                        get_template_part( 'content-post-list', get_post_format() );
+                    if ( in_category('browse') ) :
+                        get_template_part( 'content', get_post_format() );
                         
                         $count++;
                     else :
@@ -52,8 +42,9 @@ get_header(); ?>
                 if ($count === 0) :
                     echo '<p class="not-found">Sorry, no results found.</p>';
                 endif;
-            
             ?>
+            
+            </div>
             
         </section>
         
@@ -62,6 +53,5 @@ get_header(); ?>
         include('content-not-found.php');
         
     endif; ?>
-
-<?php get_sidebar('archive'); ?>
+    
 <?php get_footer(); ?>

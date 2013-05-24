@@ -7,18 +7,27 @@
  */
 ?>
 
-<section id="content" class="post-single" role="main">
-    <h2 class="page-title">
-        <?php
-            the_title();
-        ?>
-    </h2>
-
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-post-id="<?php echo date('m-d-Y', strtotime(get_the_date())); ?>">
     
-        <div id="text" class="text-container">
-            <?php the_content(); ?>
-        </div>
+    <div class="post-header">
+        <h2 class="post-title">
+            <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+        </h2>
+        
+        <p class="post-date">
+            <?php
+                $eventDate = get_field('date_of_event');
+                if ($eventDate) :
+                    echo date('M d, Y', strtotime($eventDate));
+                else :
+                    the_date();
+                endif;
+            ?>
+        </p>
+    </div>
     
-    </article><!-- #post-<?php the_ID(); ?> -->
-</section>
+    <div class="text-container">
+        <?php the_content(); ?>
+    </div>
+    
+</article>

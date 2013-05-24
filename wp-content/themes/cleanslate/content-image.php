@@ -7,7 +7,7 @@
  */
 ?>
 
-<section id="content" class="post-single" role="main">
+<section id="content" class="post-single">
     <h2 class="page-title">
         <?php
             the_title();

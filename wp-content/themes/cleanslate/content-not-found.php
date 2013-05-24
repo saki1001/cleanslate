@@ -7,8 +7,4 @@
  */
 ?>
 
-<section id="content" role="main">
-    
-    <p class="not-found">Sorry, we can't find what you're looking for.</p>
-    
-</section>
+<p class="not-found">Sorry, we can't find what you're looking for.</p>

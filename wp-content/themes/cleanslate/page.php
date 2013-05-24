@@ -13,19 +13,12 @@
 
 get_header(); ?>
         
-        <section id="content" role="main">
+        <section id="content">
             
             <?php
                 while ( have_posts() ) : the_post();
                     
-                    // Home Page
-                    if( is_home() || is_front_page() ) :
-                        get_template_part( 'content', 'home' );
-                        
-                    // All Other Pages
-                    else:
-                        get_template_part( 'content', 'page' );
-                    endif;
+                    get_template_part( 'content', 'page' );
                     
                 endwhile; // end of the loop.
             ?>

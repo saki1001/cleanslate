@@ -6,52 +6,49 @@
  * @since CleanSlate 0.1
  */
 ?>
+
+<?php get_header(); ?>
+    
+    <section id="content">
     
     <?php
-        get_header();
-        
-        // Determine parent cat and current cat
-        $categories = get_the_category();
-        $parent_cat_num = $categories[0]->parent;
-        
-        // Declare variables
-        $sidebar = '';
-        
         if ( have_posts() ) :
+            
             while ( have_posts() ) : the_post();
-            // PORTFOLIO for parent categories New Work and Archives
-                if ( in_category('new-work') || $parent_cat_num === '10' ) :
-                    $sidebar = 'cat-posts';
-                    
-                    if ( has_post_format('gallery') ) :
-                        $portfolio_template = 'portfolio-gallery';
-                    elseif ( has_post_format('video') ) :
-                        $portfolio_template = 'portfolio-video';
-                    else :
-                        $portfolio_template = 'single';
-                    endif;
-                    
-                    get_template_part('content', $portfolio_template );
-                    
-            // BLOG for parent categories Blog and News
-                elseif ( in_category('blog') || in_category('news') ) :
-                    $sidebar = 'blog';
-                    get_template_part('content', 'post-single' );
-                    
+                
+                $category = get_the_category();
+                
+                // Determine sidebar
+                if ( $category[0]->slug === 'browse' ) :
+                    $sidebar = '';
                 else :
-                    // Standard Template
-                    get_template_part('content', 'page' );
-                    
+                    $sidebar = '';
                 endif;
                 
-            endwhile; // end of the loop.
+                // Populate sidebar
+                get_sidebar($sidebar);
+            endwhile;
+            
+            rewind_posts();
     ?>
+            <div id="articles">
+            
+    <?php
+            while ( have_posts() ) : the_post();
+                get_template_part('content', get_post_format() );
+            endwhile;
+    ?>
+            
+            </div>
+    <?php
+        else :
+            // Content Not Found Template
+            include('content-not-found.php');
         
-    <?php else :
-        // Content Not Found Template
-        include('content-not-found.php');
-        
-    endif; ?>
+        endif;
     
-<?php get_sidebar($sidebar); ?>
+    ?>
+    
+    </section>
+    
 <?php get_footer(); ?>
