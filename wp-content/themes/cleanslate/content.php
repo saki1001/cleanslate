@@ -15,14 +15,7 @@
         </h2>
         
         <p class="post-date">
-            <?php
-                $eventDate = get_field('date_of_event');
-                if ($eventDate) :
-                    echo date('M d, Y', strtotime($eventDate));
-                else :
-                    the_date();
-                endif;
-            ?>
+            <?php the_date(); ?>
         </p>
     </div>
     
